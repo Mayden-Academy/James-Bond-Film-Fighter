@@ -1,7 +1,10 @@
 const express = require('express');
 const assert = require('assert');
+const mongoDb = require('mongodb').MongoClient;
 const port = 3000;
 const app = express();
+
+
 
 var MongoClient = require('mongodb').MongoClient
     , assert = require('assert');
@@ -16,3 +19,5 @@ MongoClient.connect(url, function(err, db) {
 
     db.close();
 });
+
+
