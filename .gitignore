@@ -1,0 +1,9 @@
+.idea
+vendor/
+.DS_Store
+node_modules
+.npm
+.node_repl_history
+.lock-wscript
+logs
+*.log
