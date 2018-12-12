@@ -5,14 +5,18 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 // import reducers from './reducers'
 import thunk from 'redux-thunk';
+import Title from './containers/Title'
 
 $.get('/films/random').done((res) => {
     console.log(res)
     const store = createStore(
         // reducers,
-        () => {},
+        (state = {poo: "shitty poo", ation}) => {
+            return state
+        },
         {
-            testResponse: res
+            testResponse: res,
+            title: "abdi"
         },
         applyMiddleware(thunk)
     )
@@ -21,7 +25,10 @@ $.get('/films/random').done((res) => {
 
     render(
         <Provider store={store}>
-            <div>hello world </div>
+            <div>
+            hello world
+                <Title />
+            </div>
         </Provider>,
         document.getElementById('app')
     )
