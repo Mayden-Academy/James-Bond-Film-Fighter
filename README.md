@@ -71,4 +71,3 @@ This will display top 10 films selected by all users.
  ]
  
  ```
-
