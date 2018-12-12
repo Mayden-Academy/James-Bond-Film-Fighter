@@ -1,5 +1,11 @@
 # James-Bond-Film-Fighter
 
+### Install instructions 
+```npm install```
+
+### Running application 
+```npm run start```
+
 #### GET - "/films/random"
 
 To start the game and generate two random films
