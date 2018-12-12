@@ -19,7 +19,8 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "build": "browserify -d -t babelify ./src/App.js > ./public/app-bundle.js"
+    "build": "browserify -d -t babelify ./src/App.js > ./public/app-bundle.js",
+    "start": "node server/server"
   },
   "babel": {
     "presets": [
