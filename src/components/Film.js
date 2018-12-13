@@ -30,11 +30,11 @@ const postInfo = {
 
 }
 
-export default ({title,imgUrl,date}) => (
+export default ({title,imgUrl,date, refresh}) => (
     <div style={styleFilms}>
         <h3 style={filmTitle}>{title}</h3>
         <img style={imageStyle} src={imgUrl} alt="Img"/>
         <p>Date: {date}</p>
-        <button onClick={postInfo} style={button} id={"button"}> You like this? You can't have this.</button>
+        <button onClick={refresh} id={"button"}> You like this? You can't have this.</button>
     </div>
 )

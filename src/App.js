@@ -11,9 +11,6 @@ $.get('/films/random').done((res) => {
     console.log(res)
     const store = createStore(
         reducers,
-        // (state = {poo: "shitty poo", action}) => {
-        //     return state
-        // },
         {
             randomFilms: res,
             title: "abdi"
