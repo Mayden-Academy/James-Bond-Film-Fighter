@@ -6,7 +6,7 @@ import { createStore, applyMiddleware } from 'redux'
 // import reducers from './reducers'
 import thunk from 'redux-thunk';
 import Title from './containers/Title'
-import Films from './components/Films'
+import Films from './containers/Films'
 
 $.get('/films/random').done((res) => {
     console.log(res)
@@ -27,23 +27,9 @@ $.get('/films/random').done((res) => {
     render(
         <Provider store={store}>
             <div>
-                <p>hello world</p>
+                <p>hello DUCK</p>
                 <Title />
-                <Films films={
-                    [
-                        {
-                            title: "a",
-                            date: "today",
-                            imgUrl: "HH.com"
-                        },
-                        {
-                            title: "b",
-                            date: "tomorrow",
-                            imgUrl: "HH.com/1"
-                        }
-                    ]
-                }/>
-
+                <Films />
             </div>
         </Provider>,
         document.getElementById('app')
