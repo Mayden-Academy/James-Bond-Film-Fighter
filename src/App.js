@@ -12,17 +12,16 @@ $.get('/films/random').done((res) => {
         reducers,
         {
             randomFilms: res,
-            title: "abdi"
         },
         applyMiddleware(thunk)
     )
 
     const backgroundStyle = {
         margin: "10px 20px",
-        "background-color": "grey",
+        backgroundColor: "grey",
         padding: "30px 90px",
-        "border-radius": "10px",
-        "font-family": "Trebuchet MS"
+        borderRadius: "10px",
+        fontFamily: "Trebuchet MS"
     }
 
     const bondImg = {

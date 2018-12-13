@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const styleFilms = {
     backgroundColor: "brown",
     display: "inline-block",
@@ -8,17 +7,21 @@ const styleFilms = {
     margin: "20px",
     padding: "10px",
     borderRadius: "10px"
+}
 
+const imageWrap = {
+    textAlign: "center",
+    width: "100%"
 }
 
 const filmTitle = {
+    textAlign: "center",
     margin: "0 auto",
-    width: "300px"
 }
 
 const imageStyle = {
     backgroundSize: "cover",
-    height: "300px"
+    width: "300px"
 }
 
 const button = {
@@ -26,9 +29,7 @@ const button = {
     height: "50px"
 }
 
-const postInfo = {
 
-}
 
 export default ({data, films, refreshSubmit}) => (
     <div style={styleFilms}>
