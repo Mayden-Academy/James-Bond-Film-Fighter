@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const styleFilms = {
     backgroundColor: "brown",
     display: "inline-block",
@@ -8,17 +7,20 @@ const styleFilms = {
     margin: "20px",
     padding: "10px",
     borderRadius: "10px"
+}
 
+const imageWrap = {
+    textAlign: "center",
+    width: "100%"
 }
 
 const filmTitle = {
     margin: "0 auto",
-    width: "300px"
 }
 
 const imageStyle = {
     backgroundSize: "cover",
-    height: "300px"
+    width: "300px"
 }
 
 const button = {
@@ -26,12 +28,12 @@ const button = {
     height: "50px"
 }
 
-
-
 export default ({title,imgUrl,date}) => (
     <div style={styleFilms}>
         <h3 style={filmTitle}>{title}</h3>
-        <img style={imageStyle} src={imgUrl} alt="Img"/>
+        <div style={imageWrap}>
+            <img style={imageStyle} src={imgUrl} alt="Img"/>
+        </div>
         <p>Date: {date}</p>
         <button style={button} id={"button"}> You like this? You can't have this.</button>
     </div>
