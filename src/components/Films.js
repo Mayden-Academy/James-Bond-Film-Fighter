@@ -8,11 +8,8 @@ const styleFilmSection = {
 
 export default ({films, refreshSubmit}) => (
     <div style={styleFilmSection}>
-
         {films.map((film) => {
             return <Film data={film} films={films} refreshSubmit={refreshSubmit}/>
         })}
-
     </div>
 )
-
