@@ -8,7 +8,6 @@ import Films from './containers/Films'
 import reducers from './reducers'
 
 $.get('/films/random').done((res) => {
-    console.log(res)
     const store = createStore(
         reducers,
         {

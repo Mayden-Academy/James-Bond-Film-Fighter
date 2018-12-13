@@ -30,11 +30,11 @@ const postInfo = {
 
 }
 
-export default ({title,imgUrl,date, refresh}) => (
+export default ({data, films, refreshSubmit}) => (
     <div style={styleFilms}>
-        <h3 style={filmTitle}>{title}</h3>
-        <img style={imageStyle} src={imgUrl} alt="Img"/>
-        <p>Date: {date}</p>
-        <button onClick={refresh} id={"button"}> You like this? You can't have this.</button>
+        <h3 style={filmTitle}>{data.name}</h3>
+        <img style={imageStyle} src={data.image} alt="Img"/>
+        <p>Date: {data.release_date}</p>
+        <button onClick={() => refreshSubmit(data, films)} id={"button"}> You like this? You can't have this.</button>
     </div>
 )

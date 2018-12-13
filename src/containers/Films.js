@@ -1,13 +1,14 @@
 import Films from '../components/Films'
 import {connect} from 'react-redux'
-import {GetFilms} from '../actions'
+import {GetFilms, SendPlays} from '../actions'
+
 
 const mapStateToProps = function ({randomFilms}) {
     return {films: randomFilms}
 }
 
 const mapDispatchToProps = dispatch => ({
-    refresh: () => dispatch(GetFilms())
+    refreshSubmit: (data, films) => dispatch(SendPlays(data, films))
 })
 
 export default connect(
