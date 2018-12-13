@@ -27,7 +27,6 @@ $.get('/films/random').done((res) => {
     render(
         <Provider store={store}>
             <div>
-                <p>hello DUCK</p>
                 <Title />
                 <Films />
             </div>
