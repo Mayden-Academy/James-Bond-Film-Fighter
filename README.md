@@ -1,5 +1,18 @@
 # James-Bond-Film-Fighter
 
+### Install instructions 
+Start Mono server, create DB called `james_bond` with a collection of `films` 
+
+```
+npm install
+npm run import_data
+```
+
+### Running application 
+```
+npm run start
+```
+
 #### GET - "/films/random"
 
 To start the game and generate two random films

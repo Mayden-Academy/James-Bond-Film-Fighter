@@ -1,28 +1,48 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { render } from 'react-dom'
+// import App from './components/App'
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+// import reducers from './reducers'
+import thunk from 'redux-thunk';
+import Title from './containers/Title'
+import Films from './containers/Films'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+$.get('/films/random').done((res) => {
+    console.log(res)
+    const store = createStore(
+        // reducers,
+        (state = {poo: "shitty poo", action}) => {
+            return state
+        },
+        {
+            randomFilms: res,
+        },
+        applyMiddleware(thunk)
+    )
 
-export default App;
+    const backgroundStyle = {
+        margin: "10px 20px",
+        backgroundColor: "grey",
+        padding: "30px 90px",
+        borderRadius: "10px",
+        fontFamily: "Trebuchet MS"
+    }
+
+    const bondImg = {
+        height: "50px",
+        float: "right",
+    }
+
+    render(
+        <Provider store={store}>
+            <div style={backgroundStyle}>
+                <img src="http://anygoodfilms.com/wp-content/uploads/2017/05/007-Logo.png" style={bondImg} />
+                <Title />
+                <Films />
+            </div>
+        </Provider>,
+        document.getElementById('app')
+    )
+})
+
