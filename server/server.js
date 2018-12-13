@@ -3,6 +3,7 @@ const path = require('path')
 const mongoClient  = require('mongodb').MongoClient
 const assert = require('assert')
 const BondFilms = require('./getBondFilms')
+const bodyParser = require('body-parser')
 
 const app = express()
 const port = 3001
@@ -29,6 +30,8 @@ app.get('/films/random', function(req, res) {
     })
 }
 )
+
+app.post('/films/score'),
 
 app.use(express.static(path.join(__dirname + '/../public')))
 
