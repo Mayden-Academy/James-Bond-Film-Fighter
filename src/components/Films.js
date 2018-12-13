@@ -6,10 +6,10 @@ const styleFilmSection = {
     margin: "0 auto"
 }
 
-export default ({films}) => (
+export default ({films, refreshSubmit}) => (
     <div style={styleFilmSection}>
         {films.map((film) => {
-            return <Film title ={film.name} imgUrl={film.image} date={film.release_date}/>
+            return <Film data={film} films={films} refreshSubmit={refreshSubmit}/>
         })}
     </div>
 )

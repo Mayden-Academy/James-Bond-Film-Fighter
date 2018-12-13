@@ -5,14 +5,11 @@ import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk';
 import Title from './containers/Title'
 import Films from './containers/Films'
+import reducers from './reducers'
 
 $.get('/films/random').done((res) => {
-    console.log(res)
     const store = createStore(
-        // reducers,
-        (state = {poo: "shitty poo", action}) => {
-            return state
-        },
+        reducers,
         {
             randomFilms: res,
         },
