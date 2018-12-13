@@ -4,7 +4,4 @@ export const GetFilms = () => (dispatch) => getRandom().then(films => dispatch(D
 
 export const DisplayFilms = (films) => ({type: "LOAD_FILMS", films})
 
-export const SendPlays = (data, films) => (dispatch) => sendPlay({played: films, won: data}).then(res => {
-    console.log(res)
-    dispatch(GetFilms)
-})
+export const SendPlays = (data, films) => (dispatch) => sendPlay({played: films, won: data}).always(_ => dispatch(GetFilms()))

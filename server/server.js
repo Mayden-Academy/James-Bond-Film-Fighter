@@ -34,13 +34,12 @@ app.get('/films/random', function(req, res) {
 )
 
 app.post('/films', jsonParser, function (req, res) {
-    console.log(req.body)
-    res.send("You are working ha")
-
     client.connect((err, client) => {
         const db = client.db(dbName)
         scorer.updateScores(db, req.body)
     })
+
+    res.send("You are working ha")
 })
 
 
