@@ -35,6 +35,6 @@ export default ({title,imgUrl,date}) => (
         <h3 style={filmTitle}>{title}</h3>
         <img style={imageStyle} src={imgUrl} alt="Img"/>
         <p>Date: {date}</p>
-        <butto onClick={postInfo} style={button} id={"button"}> You like this? You can't have this.</button>
+        <button onClick={postInfo} style={button} id={"button"}> You like this? You can't have this.</button>
     </div>
 )
