@@ -17,7 +17,6 @@ $.get('/films/random').done((res) => {
         },
         {
             randomFilms: res,
-            title: "abdi"
         },
         applyMiddleware(thunk)
     )
