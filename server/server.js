@@ -3,7 +3,10 @@ const path = require('path')
 const mongoClient  = require('mongodb').MongoClient
 const assert = require('assert')
 const BondFilms = require('./getBondFilms')
+const bodyParser = require('body-parser')
+const scorer = require('./scorer')
 
+const jsonParser = bodyParser.json()
 const app = express()
 const port = 3001
 
@@ -30,10 +33,22 @@ app.get('/films/random', function(req, res) {
 }
 )
 
+app.post('/films', jsonParser, function (req, res) {
+    console.log(req.body)
+    res.send("You are working ha")
+
+    client.connect((err, client) => {
+        const db = client.db(dbName)
+        scorer.updateScores(db, req.body)
+    })
+})
+
+
+
 app.use(express.static(path.join(__dirname + '/../public')))
 
 
-app.get('/', function(req, res) {
+app.get('/',  function(req, res) {
     res.sendFile(path.join(__dirname + '/../public/index.html'))
 })
 
