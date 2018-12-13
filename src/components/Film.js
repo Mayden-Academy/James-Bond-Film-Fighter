@@ -34,7 +34,9 @@ const button = {
 export default ({data, films, refreshSubmit}) => (
     <div style={styleFilms}>
         <h3 style={filmTitle}>{data.name}</h3>
-        <img style={imageStyle} src={data.image} alt="Img"/>
+        <div style={imageWrap}>
+            <img style={imageStyle} src={data.image} alt="Img"/>
+        </div>
         <p>Date: {data.release_date}</p>
         <p>Win ratio: {((data.winCount/data.playedCount)*100).toFixed(0)}% </p>
         <p>Wins: {data.winCount}</p>
