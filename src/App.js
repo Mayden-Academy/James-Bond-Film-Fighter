@@ -22,11 +22,23 @@ $.get('/films/random').done((res) => {
         applyMiddleware(thunk)
     )
 
+    const backgroundStyle = {
+        margin: "10px 20px",
+        "background-color": "grey",
+        padding: "30px 90px",
+        "border-radius": "10px",
+        "font-family": "Trebuchet MS"
+    }
 
+    const bondImg = {
+        height: "50px",
+        float: "right",
+    }
 
     render(
         <Provider store={store}>
-            <div>
+            <div style={backgroundStyle}>
+                <img src="http://anygoodfilms.com/wp-content/uploads/2017/05/007-Logo.png" style={bondImg} />
                 <Title />
                 <Films />
             </div>
