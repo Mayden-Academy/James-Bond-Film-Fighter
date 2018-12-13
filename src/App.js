@@ -11,6 +11,7 @@ $.get('/films/random').done((res) => {
     const store = createStore(
         reducers,
         {
+            title: "Bindi, James Bindi",
             randomFilms: res,
         },
         applyMiddleware(thunk)
