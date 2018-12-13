@@ -5,8 +5,9 @@ export default ({films}) => (
     <div>
 
         {films.map((film) => {
-            return <Film title ={film.title} imgUrl={film.imgUrl} date={film.date}/>
+            return <Film title ={film.name} imgUrl={film.image} date={film.date}/>
         })}
 
     </div>
 )
+
