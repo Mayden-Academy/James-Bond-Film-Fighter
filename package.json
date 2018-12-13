@@ -20,7 +20,8 @@
   },
   "scripts": {
     "build": "browserify -d -t babelify ./src/App.js > ./public/app-bundle.js",
-    "start": "node server/server"
+    "start": "node server/server",
+    "import_data": "mongoimport --db james_bond --collection films --file db/data.json --jsonArray"
   },
   "babel": {
     "presets": [

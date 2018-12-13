@@ -1,10 +1,17 @@
 # James-Bond-Film-Fighter
 
 ### Install instructions 
-```npm install```
+Start Mono server, create DB called `james_bond` with a collection of `films` 
+
+```
+npm install
+npm run import_data
+```
 
 ### Running application 
-```npm run start```
+```
+npm run start
+```
 
 #### GET - "/films/random"
 

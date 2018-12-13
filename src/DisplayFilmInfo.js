@@ -35,7 +35,7 @@ class DisplayFilmInfo extends Component
         setInterval(this.dataFetch, 30000)
     }
 
-}
+
 }
 
 export default DisplayFilmInfo
