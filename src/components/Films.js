@@ -9,7 +9,7 @@ const styleFilmSection = {
 export default ({films}) => (
     <div style={styleFilmSection}>
         {films.map((film) => {
-            return <Film title ={film.name} imgUrl={film.image} date={film.date}/>
+            return <Film title ={film.name} imgUrl={film.image} date={film.release_date}/>
         })}
     </div>
 )
