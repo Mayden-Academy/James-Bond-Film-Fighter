@@ -13,5 +13,7 @@ export default ({films}) => (
             return <Film title ={film.title} imgUrl={film.imgUrl} date={film.date}/>
         })}
 
+
+
     </div>
 )
