@@ -12,44 +12,21 @@ const url = 'mongodb://localhost:27017'
 //Database Name
 const dbName = 'james_bond'
 //instantiating new mongo client
-const client = new mongoClient(url)
+const client = new mongoClient(url, { useNewUrlParser: true })
 
 app.get('/films/random', function(req, res) {
 
-    // res.setHeader("Content-Type", "application/json")
-    // res.send(JSON.stringify([
-    //     {
-    //         "name": "fdf",
-    //         "image": "ss",
-    //         "date": "dd"
-    //     },
-    //     {
-    //         "name": "dfda",
-    //         "image": "sss",
-    //         "date": "ddd"
-    //     }
-    // ]))
+    res.setHeader("Content-Type", "application/json")
+
     client.connect((err, client) => {
-        const db = client.db(dbName);
-        test = BondFilms.getAllFilms(db)
+        const db = client.db(dbName)
+        const collection = db.collection('films')
+        response = BondFilms.getAllFilms(collection)
 
-        console.log(test)
-        res.send('test')
-        assert.equal(null, err)
-
-        console.log("Connected successfully to server")
-
-        //functions will go in here
-        res.send(JSON.stringify(BondFilms.getAllFilms(db)))
-
-        client.close()
-
-
-
+        response.then(function (data) {
+            res.send(data)
+        })
     })
-
-
-
 }
 )
 
