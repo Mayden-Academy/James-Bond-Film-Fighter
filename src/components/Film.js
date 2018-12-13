@@ -15,6 +15,7 @@ const imageWrap = {
 }
 
 const filmTitle = {
+    textAlign: "center",
     margin: "0 auto",
 }
 
@@ -31,6 +32,7 @@ const button = {
 export default ({title,imgUrl,date}) => (
     <div style={styleFilms}>
         <h3 style={filmTitle}>{title}</h3>
+        <br></br>
         <div style={imageWrap}>
             <img style={imageStyle} src={imgUrl} alt="Img"/>
         </div>
