@@ -13,7 +13,7 @@ const styleFilms = {
 
 const filmTitle = {
     margin: "0 auto",
-    width: "100px"
+    width: "300px"
 }
 
 const imageStyle = {
